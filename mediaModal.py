@@ -1,7 +1,7 @@
 import sys
-from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QMessageBox
-from PyQt6.QtCore import Qt, QPoint, QRect
-from PyQt6.QtGui import QColor, QPainter, QPen, QPolygon, QCursor, QIcon
+from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QMessageBox
+from PySide6.QtCore import Qt, QPoint, QRect
+from PySide6.QtGui import QColor, QPainter, QPen, QPolygon, QCursor, QIcon
 
 class OverlayWindow(QMainWindow):
     def __init__(self):
@@ -9,7 +9,7 @@ class OverlayWindow(QMainWindow):
             super().__init__()
             # 设置窗口图标
             self.setWindowIcon(QIcon('modal.ico'))
-            # 设置窗口无边框
+            # 设置窗口无边框，但保留任务栏图标
             self.setWindowFlags(Qt.WindowType.FramelessWindowHint | Qt.WindowType.WindowStaysOnTopHint)
             # 设置窗口背景透明
             self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
@@ -182,6 +182,10 @@ class OverlayWindow(QMainWindow):
 def main():
     try:
         app = QApplication(sys.argv)
+        
+        # 设置应用程序图标（这会影响任务栏图标）
+        app.setWindowIcon(QIcon('modal.ico'))
+        
         window = OverlayWindow()
         window.show()
         sys.exit(app.exec())
