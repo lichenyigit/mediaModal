@@ -207,8 +207,8 @@ class OverlayWindow(QMainWindow):
                         QPoint(self.width() - radius - 2, self.height() - radius - 2),
                         QPoint(self.width() - radius - 2, indicator_y)
                     ])
-                    painter.setPen(QPen(QColor(100, 100, 100), 1))
-                    painter.setBrush(QColor(150, 150, 150))
+                    painter.setPen(QPen(QColor(0, 0, 0), 1))
+                    painter.setBrush(QColor(0, 0, 0))
                     painter.drawPolygon(indicator_points)
             else:
                 # 原来的矩形绘制方式
@@ -221,8 +221,8 @@ class OverlayWindow(QMainWindow):
                         QPoint(self.width(), self.height()),
                         QPoint(self.width(), self.height() - self.resize_indicator_size)
                     ])
-                    painter.setPen(QPen(QColor(100, 100, 100), 1))
-                    painter.setBrush(QColor(150, 150, 150))
+                    painter.setPen(QPen(QColor(0, 0, 0), 1))
+                    painter.setBrush(QColor(0, 0, 0))
                     painter.drawPolygon(indicator_points)
         except Exception as e:
             event.accept()
