@@ -1,0 +1,28 @@
+{
+    "front_detection": {
+        "interval_ms": 100,
+        "enabled": true,
+        "log_enabled": true
+    },
+    "window": {
+        "default_width": 800,
+        "default_height": 50,
+        "min_width": 200,
+        "min_height": 50,
+        "position": {
+            "x": "center",
+            "y": "bottom",
+            "margin_bottom": 50
+        },
+        "rounded_corners": {
+            "enabled": true,
+            "radius": 10
+        }
+    },
+    "ui": {
+        "close_button_size": 30,
+        "resize_margin": 10,
+        "resize_indicator_size": 8,
+        "show_resize_indicator": false
+    }
+} 
